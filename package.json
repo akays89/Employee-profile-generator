@@ -1,0 +1,26 @@
+{
+  "name": "employee-profile-generator",
+  "version": "1.0.0",
+  "description": "generates employee profile",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/akays89/Employee-profile-generator.git"
+  },
+  "author": "Amanda Kays",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akays89/Employee-profile-generator/issues"
+  },
+  "homepage": "https://github.com/akays89/Employee-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
