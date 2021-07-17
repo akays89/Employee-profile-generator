@@ -98,3 +98,8 @@ function employeeInfo() {
 employeeInfo();
 
 
+function createHTML(){
+    if(fs.existsSync("output") || fs.mkdirSync("output")); 
+    fs.writeFileSync(outputPath, render(arrayEmployees), "utf-8");
+    console.log("Generating your team..."); 
+}
