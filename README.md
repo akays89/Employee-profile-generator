@@ -19,6 +19,7 @@ contact me
 ## Test
 https://loom.com/share/6d0e769560c049119883e67490dd07b8
 ## Demo 
+<img src="/Users/amanda/Code/homework8/Screen Shot 2021-07-17 at 4.12.16 PM.png"/>
 https://loom.com/share/cfd3d34581c54b06be1b069e751716b8
 ## License
 MIT
