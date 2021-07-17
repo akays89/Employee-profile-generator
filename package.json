@@ -18,7 +18,8 @@
   "homepage": "https://github.com/akays89/Employee-profile-generator#readme",
   "dependencies": {
     "inquirer": "^8.1.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "jest": "^27.0.6"

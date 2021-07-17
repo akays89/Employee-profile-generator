@@ -1,14 +1,14 @@
-const inquirer = require('inquirer');
-const fs = require('fs'); 
-const Manager = require('./lib/manager');
-const Engineer = require('./lib/engineer');
-const Intern = require('./lib/intern');
-const path = require('path');
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const inquirer = require("inquirer");
+const path = require("path");
+const fs = require("fs");
 
-const OUTPUT_DIR = path.resolve(__dirname, 'output')
-const outputPath = path.join(OUTPUT_DIR, "output")
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const render = ('./lib/htmlRenderer');
+const render = require("./lib/htmlRenderer");
 
 const arrayEmployees =[];
 
@@ -69,37 +69,40 @@ function employeeInfo() {
     ])
     .then(function (response) {
         if(response.role === "Manager") {
-           
-         const manager = new Manager(response.name, response.id, response.email, response.officeNumber); 
-         arrayEmployees.push(manager); 
+          const manager = new Manager(response.name, response.id, response.email, response.officeNumber); 
+          arrayEmployees.push(manager); 
          
          employeeInfo();
 
         } else if (response.role === "Engineer") {
             const engineer = new Engineer(response.name, response.id, response.email, response.github); 
             arrayEmployees.push(engineer); 
-           
+            
             employeeInfo();
 
         } else if (response.role === "Intern") {
-           const intern = new Intern(response.name, response.id, response.email, response.school); 
+            const intern = new Intern(response.name, response.id, response.email, response.school); 
             arrayEmployees.push(intern); 
             
             employeeInfo();
-            
+
         } else {
-           console.log("Saving data...")
+            
+            console.log("Saving data...")
            
-           createHTML(); 
+            createHTML(); 
             }
        }); 
   };
+
 
 employeeInfo();
 
 
 function createHTML(){
+    
     if(fs.existsSync("output") || fs.mkdirSync("output")); 
     fs.writeFileSync(outputPath, render(arrayEmployees), "utf-8");
+  
     console.log("Generating your team..."); 
 }
