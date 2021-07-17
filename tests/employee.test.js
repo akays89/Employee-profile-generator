@@ -41,7 +41,7 @@ test("Can set email employee email via input", () => {
     expect(employee.getEmail()).toBe(testValue);
   })
 
-  test("getRole() should return Employee", () => {
+  test('getRole() should return "Employee"', () => {
     const testValue = "Employee";
     const employee = new Employee("Audrey", 150, "fake@test.com");
     expect(employee.getRole()).toBe(testValue);
